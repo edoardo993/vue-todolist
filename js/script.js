@@ -31,6 +31,7 @@ new Vue({
                 console.log(this.wordsList)
             }
         },
+        // prova funzione al click
         exClick: function(){
             if(this.wordsList.length!==-1){
                 alert('ciaone')
