@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Document</title>
 </head>
 <body>
     
-    <div id="app">
-
+    <div class="container">
+        <div class="logo-container">
+            <a href="#"><img src="img/logo.png" class="logo"></a>
+        </div>
+        <div id="app">
+            <div class="input-container">
+                <input placeholder="Nuovo ToDo" class="input-to-do" v-model="newWord" @keyup.enter="control">
+                <button class="add-button" v-on:click="control">Aggiungi</button>
+            </div>
+            <div class="list-container">
+                <ul>
+                    <li class="container-flex" v-for="i in wordsList"><span>{{i}}</span><span class="hid" v-on:click="exClick"><i class="fas fa-times"></i></span></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
-    
+
 </body>
 </html>
