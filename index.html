@@ -16,10 +16,12 @@
         </div>
         <div id="app">
             <div class="input-container">
-                <input placeholder="Nuovo ToDo" class="input-to-do" v-model="newWord" @keyup.enter="control">
+                <div :class="warningClass" v-model="warningText"><i class="fas fa-exclamation-triangle"></i>{{warningText}}</div>
+                <input placeholder="Inserisci un item!" class="input-to-do" v-model="newWord" @keyup.enter="control">
                 <button class="add-button" v-on:click="control">Aggiungi</button>
             </div>
             <div class="list-container">
+                <div class="list-title"><span>La tua lista</span></div>
                 <ul>
                     <li class="container-flex" v-for="i in wordsList"><span>{{i}}</span><span class="hid" v-on:click="exClick"><i class="fas fa-times"></i></span></li>
                 </ul>
