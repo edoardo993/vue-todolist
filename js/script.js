@@ -6,17 +6,17 @@ new Vue({
         remove: false,
         warningClass: 'hide',
         warningText: '',
-        illegalChars: '\|"£$%&/()=?^+*§°ç[]{}#@`'
+        illegalChars: '\|"£$%&/()=?^+*§°ç[]{}#@`!'
     },
     methods: {
         isValid: function(word){
             this.warningClass='warning';
             if(word===''){
-                this.warningText='Devi inserire un item nel campo'
+                this.warningText='Devi inserire un item nel campo';
                 return false
             }
             if(this.illegalChars.includes(word)){
-                this.warningText='Non puoi inserire caratteri speciali'
+                this.warningText='Non puoi inserire caratteri speciali';
                 return false
             }
             if(!isNaN(word)){
@@ -41,13 +41,12 @@ new Vue({
             }
         },
         // prova funzione al click
-        exClick: function(){
-            this.wordsList.filter((element)=>{
-                return this.wordsList.includes(element)
+        exClick: function(indexItem){
+            this.wordsList=this.wordsList.filter((element, index)=>{
+                if(indexItem!==index){
+                    return element
+                }
             })
-            if(this.wordsList.length!==-1){
-                alert('ciaone')
-            }
         }
     }
 });

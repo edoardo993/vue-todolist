@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <title>Document</title>
+    <title>ToDo List</title>
 </head>
 <body>
     
     <div class="container">
         <div class="logo-container">
-            <a href="#"><img src="img/logo.png" class="logo"></a>
+            <a href="https://www.boolean.careers/"><img src="img/logo.png" class="logo"></a>
         </div>
         <div id="app">
             <div class="input-container">
@@ -23,7 +23,7 @@
             <div class="list-container">
                 <div class="list-title"><span>La tua lista</span></div>
                 <ul>
-                    <li class="container-flex" v-for="i in wordsList"><span>{{i}}</span><span class="hid" v-on:click="exClick"><i class="fas fa-times"></i></span></li>
+                    <li class="container-flex" v-for="(element, index) in wordsList"><span>{{element}}</span><span class="hid" @click="exClick(index)"><i class="fas fa-times"></i></span></li>
                 </ul>
             </div>
         </div>
