@@ -4,7 +4,8 @@
     box-sizing: border-box
 }
 body{
-    background: rgb(63, 131, 233)
+    background: rgb(78, 121, 216);
+    font-family: 'Roboto Condensed', sans-serif
 }
 .hide{
     display: none
@@ -18,10 +19,7 @@ body{
     position: relative
 }
 .container{
-    text-align: center;
-    height: 100vh;
-    background: rgb(110, 157, 228);
-    clip-path: polygon(38% 0, 100% 0, 100% 34%, 76% 100%, 0 100%, 0 30%);
+    text-align: center
 }
 .input-container{
     height: 50px;
@@ -48,11 +46,13 @@ body{
     margin-left: 25px;
     line-height: 50px
 }
-.add-button:hover{
+.add-button:hover,
+.icon-div:hover{
     cursor: pointer
 }
 .add-button:active{
-    background: #222
+    background: #001533;
+    scale: 1.1;
 }
 .list-container{
     min-height: 400px;
@@ -71,7 +71,7 @@ body{
     list-style: none;
     text-align: left;
     color: #fff;
-    font-size: 25px;
+    font-size: 25px
 }
 .list-container ul li{
     padding: 10px 0 10px 0;
@@ -82,15 +82,20 @@ body{
     text-align: right;
     line-height: medium
 }
-.list-title span{
+.list-title h2{
     font-size: 40px;
 }
-.warning{
-    height: 20px;
-    border-radius: 5px;
-    top: 220px;
-    left: 670px;
-    position: absolute;
-    color: red;
-    font-size: 12px;
+.icon-div i:hover{
+    color: #001533
 }
+.warning{
+    text-align: left;
+    margin: 0 auto;
+    width: 500px;
+    color: rgb(160, 29, 29);
+    font-size: 13px;
+    line-height: 10px
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }

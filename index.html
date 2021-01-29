@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>ToDo List</title>
 </head>
@@ -16,14 +18,14 @@
         </div>
         <div id="app">
             <div class="input-container">
-                <div :class="warningClass" v-model="warningText"><i class="fas fa-exclamation-triangle"></i>{{warningText}}</div>
                 <input placeholder="Inserisci un item!" class="input-to-do" v-model="newWord" @keyup.enter="control">
                 <button class="add-button" v-on:click="control">Aggiungi</button>
+                <div :class="warningClass" v-model="warningText"><i class="fas fa-exclamation-triangle"></i>{{warningText}}</div>
             </div>
             <div class="list-container">
-                <div class="list-title"><span>La tua lista</span></div>
+                <div class="list-title"><h2>La tua lista</h2></div>
                 <ul>
-                    <li class="container-flex" v-for="(element, index) in wordsList"><span>{{element}}</span><span class="hid" @click="exClick(index)"><i class="fas fa-times"></i></span></li>
+                    <li class="container-flex" v-for="(element, index) in wordsList"><span>{{element}}</span><span @click="exClick(index)" class="icon-div"><i class="fas fa-times"></i></span></li>
                 </ul>
             </div>
         </div>
